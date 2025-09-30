@@ -5,6 +5,7 @@
 class Simulation {
 public:
     double timeStep;                  // Δt
+    const double G = 6.67430e-11;     // Gravitational constant
     std::vector<Body> bodies;         // All bodies in the simulation
 
     Simulation(double dt);
@@ -17,5 +18,6 @@ public:
 
 private:
     // Private helper functions for force calculation, etc.
-    void computeForces(); 
+    void computeForces();
+    void computeGravity();
 };
