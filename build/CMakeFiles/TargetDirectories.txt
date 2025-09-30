@@ -1,0 +1,3 @@
+/workspaces/physim_local/build/CMakeFiles/PhysicsSim.dir
+/workspaces/physim_local/build/CMakeFiles/edit_cache.dir
+/workspaces/physim_local/build/CMakeFiles/rebuild_cache.dir
