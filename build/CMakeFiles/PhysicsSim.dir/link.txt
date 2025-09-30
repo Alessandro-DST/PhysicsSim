@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/PhysicsSim.dir/src/Body.cpp.o CMakeFiles/PhysicsSim.dir/src/Simulation.cpp.o -o PhysicsSim 
