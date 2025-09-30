@@ -40,4 +40,25 @@
 # debug information files
 *.dwo
 
-./build
+# Build folders
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.exe
+*.out
+
+# VSCode Dev Container
+.vscode/
+.devcontainer/.vscode-server/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
