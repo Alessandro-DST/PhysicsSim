@@ -4,6 +4,15 @@
 #include "Body.h"
 #include "Simulation.h"
 
+// Window size
+const unsigned int WIDTH = 800;
+const unsigned int HEIGHT = 600;
+
+// Simple render function -> render body as a point
+void drawBody(const Body& b){
+}
+
+
 int main() {
     Simulation sim(0.01);
 
