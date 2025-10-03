@@ -5,9 +5,9 @@
 
 int main() {
     std::cout << "Starting Simulation!" << "\n";
-    Simulation sim(0.5);
-    sim.addBody(Body(1e4, Eigen::Vector3d(0.80,0,0), Eigen::Vector3d(0,0,0)));
-    sim.addBody(Body(1e4, Eigen::Vector3d(-0.80,0.25,0), Eigen::Vector3d(0,0,0)));
+    Simulation sim(1);
+    sim.addBody(Body(1e3, Eigen::Vector3d(0.80,-0.5,0), Eigen::Vector3d(0,0,0)));
+    sim.addBody(Body(1e3, Eigen::Vector3d(-0.80,0.5,0), Eigen::Vector3d(0,0,0)));
     sim.addBody(Body(1, Eigen::Vector3d(0,0,0), Eigen::Vector3d(-0.0001,0.0001,0)));
 
     Renderer renderer(1920, 1080, "PhysicsSim");
