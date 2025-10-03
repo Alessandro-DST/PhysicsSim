@@ -5,7 +5,7 @@
 class Simulation {
 public:
     double timeStep;                  // Δt
-    const double G = 6.67430e-11;     // Gravitational constant
+    double G = 6.67430e-11;     // Gravitational constant
     std::vector<Body> bodies;         // All bodies in the simulation
 
     Simulation(double dt);
@@ -15,6 +15,8 @@ public:
 
     // Perform a single integration step (Verlet)
     void step();
+
+    void setG(double input);
 
 private:
     // Private helper functions for force calculation, etc.

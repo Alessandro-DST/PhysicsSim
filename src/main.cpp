@@ -1,29 +1,30 @@
 #include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
 #include "Body.h"
 #include "Simulation.h"
-
-// Window size
-const unsigned int WIDTH = 800;
-const unsigned int HEIGHT = 600;
-
-// Simple render function -> render body as a point
-void drawBody(const Body& b){
-}
-
+#include "Renderer.h"
 
 int main() {
-    Simulation sim(0.01);
+    std::cout << "Starting Simulation!" << "\n";
+    Simulation sim(0.5);
+    sim.addBody(Body(1e4, Eigen::Vector3d(0.80,0,0), Eigen::Vector3d(0,0,0)));
+    sim.addBody(Body(1e4, Eigen::Vector3d(-0.80,0.25,0), Eigen::Vector3d(0,0,0)));
+    sim.addBody(Body(1, Eigen::Vector3d(0,0,0), Eigen::Vector3d(-0.0001,0.0001,0)));
 
-    Body b1(1e10, Eigen::Vector3d(0,0,0), Eigen::Vector3d(0,0,0));
-    Body b2(1e10, Eigen::Vector3d(10,10,0), Eigen::Vector3d(0,0,0));
-    sim.addBody(b1);
-    sim.addBody(b2);
+    Renderer renderer(1920, 1080, "PhysicsSim");
+    //double x{};
+    //std::cout << "Input G:";
+    //std::cin >> x;
+    //sim.setG(x);
 
-    for (int i = 0; i < 100; ++i){
+    while (!renderer.shouldClose()) {
         sim.step();
-        std::cout << "Step" << i << ": " << "\n"<< "Body[0]: "<< sim.bodies[0].position.transpose() << "\n"<< "Body[1]: "<< sim.bodies[1].position.transpose() << "\n\n";
+
+        for(size_t i = 0; i < sim.bodies.size(); i++){
+            std::cout << "B" << i <<":\n" << sim.bodies[i].position.x() << "," << sim.bodies[i].position.y() << "," << sim.bodies[i].position.z() << "\n";
+        }
+        renderer.render(sim.bodies); // Draw current state
+        renderer.swapBuffers();      // Show newly drawn frame
+        renderer.pollEvents();       // Handle user input or window events
     }
 
     return 0;
