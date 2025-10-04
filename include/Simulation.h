@@ -16,8 +16,6 @@ public:
     // Perform a single integration step (Verlet)
     void step();
 
-    void setG(double input);
-
 private:
     // Private helper functions for force calculation, etc.
     void computeForces();

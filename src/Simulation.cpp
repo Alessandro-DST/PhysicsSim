@@ -8,11 +8,6 @@ void Simulation::addBody(const Body& body) {
     bodies.push_back(body);
 }
 
-//Set G value
-void Simulation::setG(double input) {
-    G = input;
-}
-
 // Compute forces acting on bodies
 void Simulation::computeForces() {
     // Reset all accelerations
